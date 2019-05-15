@@ -94,7 +94,7 @@ The signal about the force log out by having other people having the same accoun
 **return data**
 
 |字段|类型|空|默认|注释|
-|---|---|---|---|
+|---|---|---|---|---|
 |p |array  |是   |PotStatus |累积奖金清单信息  the jackpot list information, see [Jackpot](https://www.showdoc.cc/214668919119866?page_id=1221150377505858 "Jackpot") |
 |hash |string  |否       | int     | result hash 结果哈希  |
 |xf |string  |否       | int     | factor  爆炸系数 |
@@ -117,7 +117,7 @@ the snapshot of the players. This request will have a limit return time of 10 se
 **return data**
 
 |字段|类型|空|默认|注释|
-|---|---|---|---|
+|---|---|---|---|---|
 |r |array |否   | []   |  玩家列表信息 the player list information, see** BDPlayer struct**   类型 [player struct](https://www.showdoc.cc/214668919119866?page_id=1222480864141365 "player struct")|
 |p |array |否   | []   |  锅名单信息 the pot list information, see [**Pots struct **](https://www.showdoc.cc/214668919119866?page_id=1221150377505858 "**Pots struct **")  |
 |s |integer |否   | []   | 当前状态 the current status, see  [**Status > Game status**](https://www.showdoc.cc/214668919119866?page_id=1220991323202801 "**Status > Game status**")|
@@ -135,7 +135,7 @@ when the game changes its state. all players will receive this message from the 
 **return data**
 
 |字段|类型|空|默认|注释|
-|---|---|---|---|
+|---|---|---|---|---|
 |s    |int(10)     |否 |  |  status, see Status      状态    |
 |n   |int(10)     |否 |  | next game period number    下一场比赛期间的数字     |
 |w    |int(10)     |否 |  |waiting interval number in seconds until the next status update    等待间隔数，以秒为单位，直到下一次状态更新     |
@@ -157,7 +157,7 @@ when the user is successfully login to the game and the subscription of data is 
 **return data**
 
 |字段|类型|空|默认|注释|
-|---|---|---|---|
+|---|---|---|---|---|
 |f |varchar(20) |否 |    |   bao dian factor  |
 
 - 备注：自动推送
