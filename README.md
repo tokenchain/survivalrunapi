@@ -7,7 +7,7 @@ the documentations for survival run
 **return data**
 
 |字段|类型|空|默认|注释|
-|:----    |:-------    |:--- |-- -|------      |
+|---|---|---|---|---|
 |data    |object  |否       | {}     | [Wallet Object](https://www.showdoc.cc/214668919119866?page_id=1289611891984243 "Wallet Object") |
 |code    |int    |否 |  |1     |
 
@@ -76,4 +76,16 @@ Please make sure you have used the given js websocket script to handle websocket
 **push tag** `profile_update`
 **return data** 请参考详细结构  please refer to the detail structure for [Profile Update.](https://www.showdoc.cc/214668919119866?page_id=1220480815195825 "Profile Update.")
 
+
+**return tag** `logout_passive`- 通过让其他具有相同帐户访问信息的人登录同一帐户来强制注销的信号。
+
+The signal about the force log out by having other people having the same account access information to login the same account.
+
+**return data**
+
+|字段|类型|空|默认|注释|
+|---|---|---|---|---|
+|code |array  |是   |message code | 1331 |
+|t |timestamp  |否       | int     | timestamp  |
+|message    |string    |否 |  |"updated"      |
 
