@@ -1,7 +1,7 @@
 # survivalrunapi
 the documentations for survival run
 
-
+### wallet data
 
 **return tag** `wallet_update`- **to user connection only** 资金信息更新, 这将被广播到所有连接器
 **return data**
@@ -182,6 +182,8 @@ duration the course of the game there are special effects to be triggered by the
 
 This is the websocket interface api manual.
 
+### Subcription and unsubscription
+
 **request tag**  `sub`
 
 **request content**
@@ -215,7 +217,7 @@ to stop the game ticker subscription. This command will cancel the following pus
 **return tag**  无
 **return data**  无
 
-
+### Ticker
 This is the websocket interface api manual.
 **request tag**   无
 **return tag** `bb_tick`
@@ -225,7 +227,7 @@ when the user is successfully login to the game and the subscription of data is 
 **return data**
 
 |字段|类型|空|默认|注释|
-|---|---|---|---|
+|---|---|---|---|---|
 |f |varchar(20) |否 |    |   bao dian factor  |
 
 - 备注：自动推送
@@ -282,5 +284,48 @@ to stop the game ticker subscription. This command will cancel the following pus
 
 **return tag**  无
 **return data**  无
+
+
+### 投注 / 逃跑操作 / User Updates
+
+This is the websocket interface api manual.
+
+**request tag**  `bet`
+to make the bet in the game will return 2 tags `bet_request` and `player_update`
+
+在游戏中下注将返回2个标签`bet_request`和`player_update`
+
+**request data**
+
+|字段|类型|空|默认|注释|
+|---|---|---|---|---|
+|Amount |float |否   | []   |   the player list information, see BDPlayer struct   |
+|Currency |string |否   | []   | the name of the coin |
+|Time    |timestamp    |否 |  |timestamp         |
+
+
+**return tag**  `bet_request`
+**return data**
+
+|字段|类型|空|默认|注释|
+|---|---|---|---|---|
+|code    |int    |否 |  | 1 = success , != 1 failure..         |
+|message  |string    |否 |  | success/failure         |
+
+- see the code. 
+
+**request  tag** `escape`
+to make the bet in the game will return 2 tags `escape_request` and `player_update`
+
+在游戏中下注将返回2个标签`bet_request`和`player_update`
+
+
+**return tag** `escape_request`
+**return data**
+
+|字段|类型|空|默认|注释|
+|---|---|---|---|---|
+|f    |float(10)      |否 |  | the factor or ticker when the escape is successful   逃脱成功时的因素或自动收报机   |
+|message    |string    |否 |  |the message from the result "success/failure"  来自结果“成功/失败”的消息     |
 
 
